@@ -1,0 +1,178 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+// Simulated testimonial data
+const testimonials = [
+  {
+    id: 1,
+    name: "María Juárez",
+    position: "Directora",
+    school: "Colegio San Martín",
+    quote: "SchoolAR ha transformado la manera en que gestionamos nuestra escuela. Los procesos que antes tomaban días ahora se completan en minutos. La comunicación entre docentes, estudiantes y padres ha mejorado significativamente.",
+    rating: 5,
+    initials: "MJ"
+  },
+  {
+    id: 2,
+    name: "Carlos Rodríguez",
+    position: "Coordinador Académico",
+    school: "Instituto Tecnológico del Sur",
+    quote: "Después de probar varias plataformas, SchoolAR es la única que realmente se adaptó a nuestras necesidades específicas. El módulo de asistencia y el de calificaciones son particularmente útiles para nuestra institución.",
+    rating: 5,
+    initials: "CR"
+  },
+  {
+    id: 3,
+    name: "Laura Fernández",
+    position: "Administradora",
+    school: "Escuela Primaria Nº 15",
+    quote: "La implementación fue sorprendentemente sencilla. El equipo de soporte nos acompañó en cada paso y la capacitación a nuestro personal fue excelente. Ahora toda nuestra gestión administrativa es más eficiente.",
+    rating: 4,
+    initials: "LF"
+  },
+  {
+    id: 4,
+    name: "Javier Méndez",
+    position: "Profesor de Matemáticas",
+    school: "Liceo Francés",
+    quote: "Como docente, SchoolAR me ha facilitado enormemente el seguimiento del progreso de mis estudiantes. Puedo asignar tareas, calificarlas y dar retroalimentación, todo desde una misma plataforma intuitiva.",
+    rating: 5,
+    initials: "JM"
+  },
+  {
+    id: 5,
+    name: "Sofía Gutiérrez",
+    position: "Tesorera",
+    school: "Colegio Nacional de Buenos Aires",
+    quote: "El módulo de facturación es excepcional. Ha reducido nuestros errores de cobro en un 95% y nos permite tener un control financiero mucho más preciso. Los padres también aprecian la transparencia.",
+    rating: 4,
+    initials: "SG"
+  },
+  {
+    id: 6,
+    name: "Martín Acosta",
+    position: "Director de Sistemas",
+    school: "Universidad del Norte",
+    quote: "La seguridad y la estabilidad de SchoolAR son impresionantes. En dos años de uso, no hemos tenido ninguna pérdida de datos ni caídas significativas del sistema. La escalabilidad también ha sido clave para nuestra institución.",
+    rating: 5,
+    initials: "MA"
+  }
+];
+---
+
+<MainLayout title="Testimonios" description="Conoce las opiniones de nuestros usuarios sobre SchoolAR">
+  <!-- Hero Section -->
+  <section class="bg-primary text-white py-16">
+    <div class="container">
+      <h1 class="text-white text-center">Testimonios</h1>
+      <p class="text-center max-w-3xl mx-auto mt-4">
+        Descubre lo que dicen nuestros usuarios sobre su experiencia con SchoolAR.
+      </p>
+    </div>
+  </section>
+
+  <!-- Testimonials Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {testimonials.map((testimonial) => (
+          <div class="card h-full flex flex-col">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="text-xl font-bold text-primary">{testimonial.initials}</span>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold">{testimonial.name}</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">{testimonial.position}</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400">{testimonial.school}</p>
+                
+                <!-- Star Rating -->
+                <div class="flex mt-1">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      viewBox="0 0 24 24" 
+                      fill={i < testimonial.rating ? "currentColor" : "none"}
+                      class={`w-4 h-4 ${i < testimonial.rating ? "text-yellow-500" : "text-gray-300 dark:text-gray-600"} ${i < testimonial.rating ? "" : "stroke-current"}`}
+                    >
+                      <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                    </svg>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+            <blockquote class="italic mb-4 flex-grow">
+              "{testimonial.quote}"
+            </blockquote>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Testimonial -->
+  <section class="section bg-gray-50 dark:bg-gray-900">
+    <div class="container">
+      <h2 class="text-center mb-12">Testimonio Destacado</h2>
+      
+      <div class="card max-w-4xl mx-auto">
+        <div class="flex flex-col md:flex-row gap-8 items-center">
+          <div class="bg-primary/10 w-32 h-32 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="text-3xl font-bold text-primary">DP</span>
+          </div>
+          <div>
+            <blockquote class="italic text-lg mb-6">
+              "Implementar SchoolAR fue una de las mejores decisiones que tomamos como institución. No solo ha mejorado nuestra eficiencia administrativa, sino que ha transformado la experiencia educativa para nuestros estudiantes y docentes. La plataforma es intuitiva, robusta y el soporte técnico es excepcional. Después de tres años de uso, puedo decir con confianza que SchoolAR ha sido un socio clave en nuestro crecimiento y modernización."
+            </blockquote>
+            <div>
+              <h3 class="text-xl font-bold">Dr. Pablo Sánchez</h3>
+              <p>Rector, Universidad Tecnológica de Córdoba</p>
+              
+              <!-- Star Rating -->
+              <div class="flex mt-2">
+                {Array.from({ length: 5 }).map(() => (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-yellow-500">
+                    <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                  </svg>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Testimonial (Placeholder) -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center mb-12">Video Testimonios</h2>
+      
+      <div class="aspect-w-16 aspect-h-9 max-w-4xl mx-auto">
+        <div class="bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center h-80">
+          <div class="text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 mx-auto text-gray-400 mb-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
+            </svg>
+            <p class="text-xl text-gray-500">Video Testimonial</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-secondary/10 py-16">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2 class="mb-4">¿Quieres ser parte de nuestras historias de éxito?</h2>
+        <p class="text-lg mb-8">
+          Únete a las instituciones que ya han transformado su gestión educativa con SchoolAR.
+        </p>
+        <a href="/contact" class="button">Contactar ahora</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

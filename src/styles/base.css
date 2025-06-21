@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-primary dark:text-white;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  a {
+    @apply text-primary dark:text-white hover:text-secondary dark:hover:text-yellow-400 transition-colors;
+  }
+
+  a.on-dark {
+    @apply text-white hover:text-yellow-400;
+  }
+
+  button, .button {
+    @apply bg-primary text-white hover:bg-secondary hover:text-gray-900 transition-colors px-6 py-2 rounded-md;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4 max-w-7xl;
+  }
+
+  .section {
+    @apply py-12 md:py-24;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md p-6;
+  }
+}

@@ -1,0 +1,140 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Sobre Nosotros" description="Conoce más sobre SchoolAR, nuestra historia, misión y visión">
+  <!-- Hero Section -->
+  <section class="bg-primary text-white py-16">
+    <div class="container">
+      <h1 class="text-white text-center">Sobre Nosotros</h1>
+    </div>
+  </section>
+
+  <!-- History Section -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="mb-6">Nuestra Historia</h2>
+          <p class="mb-4">
+            SchoolAR nació en 2018 como respuesta a la creciente necesidad de digitalización en el sector educativo argentino. 
+            Un grupo de profesionales de la educación y la tecnología se unieron con el objetivo de crear una solución integral 
+            que simplificara la gestión escolar.
+          </p>
+          <p class="mb-4">
+            Tras dos años de desarrollo y pruebas con instituciones piloto, lanzamos oficialmente nuestra plataforma en 2020, 
+            justo cuando la pandemia aceleró la necesidad de herramientas digitales en la educación.
+          </p>
+          <p>
+            Hoy, SchoolAR es utilizada por más de 200 instituciones educativas en todo el país, desde jardines de infantes 
+            hasta universidades, ayudando a optimizar procesos administrativos y mejorar la comunicación entre todos los 
+            actores del ecosistema educativo.
+          </p>
+        </div>
+        <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-8 h-80 flex items-center justify-center">
+          <span class="text-2xl text-gray-400">Imagen de la historia</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision Section -->
+  <section class="section bg-gray-50 dark:bg-gray-900">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-center mb-12">Misión, Visión y Valores</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="card h-full">
+            <h3 class="text-xl mb-4 text-center">Misión</h3>
+            <p>
+              Transformar la gestión educativa mediante tecnología accesible y eficiente, 
+              permitiendo a las instituciones enfocarse en lo más importante: la educación de calidad.
+            </p>
+          </div>
+          
+          <div class="card h-full">
+            <h3 class="text-xl mb-4 text-center">Visión</h3>
+            <p>
+              Ser la plataforma de gestión escolar líder en Latinoamérica, 
+              reconocida por su innovación, facilidad de uso y contribución a la mejora de la calidad educativa.
+            </p>
+          </div>
+          
+          <div class="card h-full">
+            <h3 class="text-xl mb-4 text-center">Valores</h3>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Innovación constante</li>
+              <li>Compromiso con la educación</li>
+              <li>Simplicidad y usabilidad</li>
+              <li>Seguridad y privacidad</li>
+              <li>Trabajo colaborativo</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center mb-12">Nuestro Equipo</h2>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <!-- Team Member 1 -->
+        <div class="card text-center">
+          <div class="bg-primary/10 w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <span class="text-2xl font-bold text-primary">LP</span>
+          </div>
+          <h3 class="text-xl mb-1">Laura Pérez</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">CEO & Co-fundadora</p>
+          <p class="text-sm">Ex-directora escolar con 15 años de experiencia en gestión educativa.</p>
+        </div>
+        
+        <!-- Team Member 2 -->
+        <div class="card text-center">
+          <div class="bg-primary/10 w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <span class="text-2xl font-bold text-primary">MR</span>
+          </div>
+          <h3 class="text-xl mb-1">Martín Rodríguez</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">CTO & Co-fundador</p>
+          <p class="text-sm">Ingeniero en sistemas especializado en desarrollo de software educativo.</p>
+        </div>
+        
+        <!-- Team Member 3 -->
+        <div class="card text-center">
+          <div class="bg-primary/10 w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <span class="text-2xl font-bold text-primary">CG</span>
+          </div>
+          <h3 class="text-xl mb-1">Carolina González</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Directora de Producto</p>
+          <p class="text-sm">Especialista en UX/UI con enfoque en accesibilidad y experiencia de usuario.</p>
+        </div>
+        
+        <!-- Team Member 4 -->
+        <div class="card text-center">
+          <div class="bg-primary/10 w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <span class="text-2xl font-bold text-primary">JL</span>
+          </div>
+          <h3 class="text-xl mb-1">Javier López</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Director Comercial</p>
+          <p class="text-sm">Experto en ventas B2B con amplia experiencia en el sector educativo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-secondary/10 py-16">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2 class="mb-4">¿Quieres formar parte de nuestra historia?</h2>
+        <p class="text-lg mb-8">
+          Únete a las más de 200 instituciones que ya confían en SchoolAR para su gestión educativa.
+        </p>
+        <a href="/contact" class="button">Contactar ahora</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
